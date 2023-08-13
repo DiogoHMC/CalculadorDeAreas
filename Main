@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		float[] arraySide = new float[10];
+		
+		char aux = 's';
+		int index = 0;
+		
+		while(aux != 'N' && aux != 'n'){
+			System.out.println("Voce deseja continuar? s/n");
+			
+			aux = scanner.next().charAt(0);
+			
+			if(aux != 'N' && aux != 'n' && aux != 'S' && aux != 's') {
+				System.out.println("Resposta invalida");
+			}
+			
+			else if(aux == 's' || aux == 'S') {
+				int answer;
+				
+				System.out.println("Gostaria de adicionar um triangulo ou um quadrado");
+				System.out.print("1) Triangulo \n2) Quadrado \n");
+				
+				answer = scanner.nextInt();				
+				
+				float side;
+				
+				switch(answer) {
+				case 1: System.out.println("Qual é a medida em cm de cada lado do triangulo? ");
+						side = scanner.nextFloat();
+						
+						arraySide[index]= side;
+						index++;
+						
+				case 2: System.out.println("Gostaria de adicionar um triangulo ou um quadrado");
+						side = scanner.nextFloat();
+						
+						arraySide[index]= side;
+						index++;
+				}
+			}
+		}
+		
+		System.out.println("NAO ESTOU NO LOOP");
+	}
+
+}
