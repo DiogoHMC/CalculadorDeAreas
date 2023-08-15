@@ -54,6 +54,11 @@ public class Main {
                         System.out.println("Qual e a medida em cm do lado do triangulo? ");
 
                         side = scanner.nextInt();
+                        
+                        if(side < 0) {
+                        	System.out.println("Nao existe medida negativa tente novamente. ");
+                        	break;
+                        }
 
                         double area = ((side * side) * Math.sqrt(3)) / 4;
                         
@@ -70,7 +75,13 @@ public class Main {
 
                     case 4:
                         System.out.println("Qual e a medida em cm do lado do quadrado? ");
+                        
                         side = scanner.nextInt();
+                        
+                        if(side < 0) {
+                        	System.out.println("Nao existe medida negativa tente novamente. ");
+                        	break;
+                        }
 
                         float areaq = side * side;
 
@@ -81,15 +92,16 @@ public class Main {
                         listaDePoligonos.add(quadrado);
 
                         break;
+
                    default :
-                	   System.out.println("Poligono invalido \n casos validos: 3 e 4 \n");
+                	   System.out.println("Poligono invalido \ncasos validos: 3 e 4 \n");
                 	   
                 	   break;
-            		}
+            	}
         	}
         }
 
-        //System.out.println("Loop finalizado");
+        
         
         System.out.println("Gostaria de ter a soma de todas as areas? s/n ");
         
@@ -98,7 +110,7 @@ public class Main {
         for (Poligono poligono : listaDePoligonos) {
         	
         	BigDecimal numero = new BigDecimal(poligono.areaDoPoligono);
-            BigDecimal areaPoligonoArredondada = numero.setScale(2, RoundingMode.HALF_UP);
+            	BigDecimal areaPoligonoArredondada = numero.setScale(2, RoundingMode.HALF_UP);
         	
             System.out.println(poligono.nomePoligono + " de lado " + poligono.lados + " cm e area " + areaPoligonoArredondada + " cm2");
         }
@@ -106,7 +118,7 @@ public class Main {
         if (answerSoma == 'S' || answerSoma == 's') {
         	
         	 BigDecimal numeroBigDecimal = new BigDecimal(areaTotal);
-             BigDecimal areaArredondada = numeroBigDecimal.setScale(2, RoundingMode.HALF_UP);
+            	 BigDecimal areaArredondada = numeroBigDecimal.setScale(2, RoundingMode.HALF_UP);
         	
         	System.out.println("Area Total: "+areaArredondada+"cm2");
         }
