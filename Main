@@ -51,7 +51,7 @@ public class Main {
 
                 switch (answer) {
                     case 3:
-                        System.out.println("Qual é a medida em cm do lado do triangulo? ");
+                        System.out.println("Qual e a medida em cm do lado do triangulo? ");
 
                         side = scanner.nextInt();
 
@@ -69,7 +69,7 @@ public class Main {
                         break;
 
                     case 4:
-                        System.out.println("Qual é a medida em cm do lado do quadrado? ");
+                        System.out.println("Qual e a medida em cm do lado do quadrado? ");
                         side = scanner.nextInt();
 
                         float areaq = side * side;
@@ -81,7 +81,11 @@ public class Main {
                         listaDePoligonos.add(quadrado);
 
                         break;
-            	}
+                   default :
+                	   System.out.println("Poligono invalido \n casos validos: 3 e 4 \n");
+                	   
+                	   break;
+            		}
         	}
         }
 
